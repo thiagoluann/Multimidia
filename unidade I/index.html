@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Reprodutor Web Áudio</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: linear-gradient(135deg, #e0f7fa, #ffffff);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: start;
+      padding: 40px;
+    }
+
+    h1 {
+      color: #00796b;
+    }
+
+    .controls {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 12px;
+      margin-top: 20px;
+    }
+
+    button {
+      padding: 10px 20px;
+      font-size: 16px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: 0.2s ease-in-out;
+    }
+
+    #playBtn { background-color: #4caf50; color: white; }
+    #pauseBtn { background-color: #ff9800; color: white; }
+    #stopBtn { background-color: #f44336; color: white; }
+    #toggleEffectBtn { background-color: #3f51b5; color: white; }
+
+    button:hover {
+      opacity: 0.9;
+      transform: scale(1.03);
+    }
+
+    .volume-control {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    input[type="range"] {
+      width: 200px;
+    }
+
+    #volumeValue {
+      font-weight: bold;
+      color: #00796b;
+    }
+  </style>
+</head>
+<body>
+  <h1>🎵 Reprodutor Web Áudio</h1>
+
+  <div class="controls">
+    <div>
+      <button id="playBtn">▶️ Play</button>
+      <button id="pauseBtn">⏸️ Pause</button>
+      <button id="stopBtn">⏹️ Stop</button>
+    </div>
+
+    <div class="volume-control">
+      <label for="volumeSlider">Volume:</label>
+      <input type="range" id="volumeSlider" min="0" max="100" value="100">
+      <span id="volumeValue">100%</span>
+    </div>
+
+    <button id="toggleEffectBtn">🎛️ Ativar Filtro Passa-Baixa</button>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

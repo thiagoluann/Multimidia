@@ -1,0 +1,21 @@
+@startuml
+
+title Grafo de Áudio 
+
+skinparam style strictuml
+skinparam rectangle {
+  BackgroundColor #EEEEEE
+  BorderColor Black
+  FontColor Black
+}
+
+rectangle "AudioBufferSourceNode\n(Fonte de áudio)" as Source
+rectangle "BiquadFilterNode\n(Filtro Passa-Baixa)" as Filter
+rectangle "GainNode\n(Controle de Volume)" as Gain
+rectangle "AudioContext.destination\n(Saída de Áudio)" as Output
+
+Source --> Filter
+Filter --> Gain
+Gain --> Output
+
+@enduml
